@@ -1,0 +1,14 @@
+:host {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+app-map {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

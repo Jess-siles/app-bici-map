@@ -1,8 +1,50 @@
+
+
+.gps-marker {
+  animation: pulse 2s infinite;
+  text-shadow: 0 0 10px red;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* MAPA OCUPA TODO CELULAR */
 :host {
-  display: block !important;
-  height: 100vh !important;
-  width: 100vw !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  display: block;
+  height: 100vh;  /* 100% altura pantalla */
+  width: 100vw;   /* 100% ancho pantalla */
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 100% !important;  /* Mapa full screen */
+  width: 100% !important;
+  min-height: 400px;
+  border: none;  /* Quita rojo desktop */
+}
+
+/* Título móvil */
+h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  text-align: center;
+  color: #ff4444;
+  font-weight: bold;
+}
+
+/* Status GPS móvil */
+#gps-status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 1000;
 }
