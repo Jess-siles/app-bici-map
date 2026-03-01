@@ -1,0 +1,31 @@
+// p{
+//     //arriba, derecha, abajo, izquierda
+//     padding: 50px 30px 10px 80px;
+
+//     //
+//     padding: 50px 30px;
+// }
+.contenedor{
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Organiza HIJO en columna (arriba→abajo) */
+}
+.texto {
+  flex: 1;
+  padding: 50px 30px;
+  transition: all 1s ;
+
+//   transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);  /* Más lento = más visible */
+}
+
+.texto.animar {
+  transform: translateY(-50px) scale(1.2);  /* ← SUBE MUCHO + crece */
+  padding-top: 150px;
+  background: yellow !important;  /* Color para VER */
+//   rotate(10deg);
+}
+
+.mover {
+  padding: 10px 80px;
+  margin-top: auto;
+}

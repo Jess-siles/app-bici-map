@@ -27,10 +27,10 @@ export class MapComponent {
       }).addTo(this.map);
 
       // Marker Jessica bici
-      L.marker([-31.4201, -64.1888])
-        .addTo(this.map)
-        .bindPopup('🚴‍♀️ Jessica aquí')
-        .openPopup();
+      // L.marker([-31.4201, -64.1888])
+      //   .addTo(this.map)
+      //   .bindPopup('🚴‍♀️ Jessica aquí')
+      //   .openPopup();
     }, 100);
 
     // DENTRO de ngAfterViewInit(), DESPUÉS del marker estático
@@ -76,7 +76,6 @@ export class MapComponent {
           console.log(`GPS LIVE: ${lat.toFixed(6)}, ${lng.toFixed(6)}`);
         },
         (error) => {
-          console.error('GPS error:', error.message);
           // Fallback Córdoba si falla
           this.map.setView([-31.4201, -64.1888], 13);
         },
@@ -132,9 +131,9 @@ startWatching() {
       console.log('Android GPS delay:', error.message); // NO fallback
     },
     {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 1000  // 1s Android OK
+        enableHighAccuracy: false,
+        timeout: 10000,  // Aumenta a 10s
+        maximumAge: 30000  // Usa caché reciente
     }
   );
 }
